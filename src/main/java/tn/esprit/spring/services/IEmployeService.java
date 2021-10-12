@@ -3,6 +3,7 @@ package tn.esprit.spring.services;
 import java.util.Date;
 import java.util.List;
 
+import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
@@ -34,7 +35,7 @@ public interface IEmployeService {
 	public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, 
 	Date dateDebut, Date dateFin);
 
-	int addOrUpdateEmploye(Employe employe);
+	int addOrUpdateEmploye(EmployeDTO employeDto);
 	
 	
 	

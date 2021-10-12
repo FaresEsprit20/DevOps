@@ -17,6 +17,8 @@ import javax.validation.constraints.Pattern;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Builder;
+
 
 @Entity
 public class Employe implements Serializable {

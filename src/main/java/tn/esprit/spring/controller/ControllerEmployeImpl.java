@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import javax.validation.constraints.Pattern;
+
 
 import org.ocpsoft.rewrite.annotation.Join;
 import org.ocpsoft.rewrite.el.ELBeanName;
@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
@@ -79,7 +80,7 @@ public class ControllerEmployeImpl  {
 
 		if (authenticatedUser==null || !loggedIn) return "/login.xhtml?faces-redirect=true";
 
-		employeService.addOrUpdateEmploye(new Employe(nom, prenom, email, password, actif, role)); 
+		employeService.addOrUpdateEmploye(new EmployeDTO(nom, prenom, email, password, actif, role)); 
 		return "null"; 
 	}  
 
@@ -109,17 +110,17 @@ public class ControllerEmployeImpl  {
 
 	} 
 
-	public String updateEmploye() 
+	/*public String updateEmploye() 
 	{ 
 		String navigateTo = "null";
 		
 		if (authenticatedUser==null || !loggedIn) return "/login.xhtml?faces-redirect=true";
 
-		employeService.addOrUpdateEmploye(new Employe(employeIdToBeUpdated, nom, prenom, email, password, actif, role)); 
+		//employeService.addOrUpdateEmploye(new Employe(employeIdToBeUpdated, nom, prenom, email, password, actif, role)); 
 
 		return navigateTo; 
 
-	} 
+	} */
 
 
 	// getters and setters 
@@ -161,10 +162,10 @@ public class ControllerEmployeImpl  {
 		this.loggedIn = loggedIn;
 	}
 
-	public int ajouterEmploye(Employe employe)
+	public int ajouterEmploye(EmployeDTO employeDto)
 	{
-		employeService.addOrUpdateEmploye(employe);
-		return employe.getId();
+		employeService.addOrUpdateEmploye(employeDto);
+		return employeDto.getId();
 	}
 
 	public void mettreAjourEmailByEmployeId(String email, int employeId) {
