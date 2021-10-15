@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import tn.esprit.spring.dto.ContratDTO;
 import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Departement;
@@ -18,6 +19,7 @@ import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.entities.Timesheet;
+import tn.esprit.spring.mapper.ContratMapper;
 import tn.esprit.spring.mapper.EmployeMapper;
 import tn.esprit.spring.repository.ContratRepository;
 import tn.esprit.spring.repository.DepartementRepository;
@@ -101,8 +103,8 @@ public class EmployeServiceImpl implements IEmployeService {
 	
 	// Tablesapce (espace disque) 
 
-	public int ajouterContrat(Contrat contrat) {
-		contratRepoistory.save(contrat);
+	public int ajouterContrat(ContratDTO contrat) {
+		contratRepoistory.save(ContratMapper.toEntity(contrat));
 		l.info("le contrat a été ajouté avec succés");
 		return contrat.getReference();
 	}

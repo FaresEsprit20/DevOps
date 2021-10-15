@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import tn.esprit.spring.dto.ContratDTO;
 import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
@@ -20,6 +21,8 @@ import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.entities.Role;
 import tn.esprit.spring.entities.Timesheet;
+import tn.esprit.spring.mapper.ContratMapper;
+import tn.esprit.spring.mapper.EmployeMapper;
 import tn.esprit.spring.services.IEmployeService;
 
 
@@ -185,7 +188,7 @@ public class ControllerEmployeImpl  {
 		employeService.desaffecterEmployeDuDepartement(employeId, depId);
 	}
 
-	public int ajouterContrat(Contrat contrat) {
+	public int ajouterContrat(ContratDTO contrat) {
 		employeService.ajouterContrat(contrat);
 		return contrat.getReference();
 	}

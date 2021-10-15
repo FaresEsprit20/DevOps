@@ -8,8 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import tn.esprit.spring.dto.DepartementDTO;
+import tn.esprit.spring.dto.EntrepriseDTO;
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
+import tn.esprit.spring.mapper.DepartementMapper;
+import tn.esprit.spring.mapper.EntrepriseMapper;
 import tn.esprit.spring.repository.DepartementRepository;
 import tn.esprit.spring.repository.EntrepriseRepository;
 
@@ -21,13 +25,13 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	@Autowired
 	DepartementRepository deptRepoistory;
 	
-	public int ajouterEntreprise(Entreprise entreprise) {
-		entrepriseRepoistory.save(entreprise);
+	public int ajouterEntreprise(EntrepriseDTO entreprise) {
+		entrepriseRepoistory.save(EntrepriseMapper.toEntity(entreprise));
 		return entreprise.getId();
 	}
 
-	public int ajouterDepartement(Departement dep) {
-		deptRepoistory.save(dep);
+	public int ajouterDepartement(DepartementDTO dep) {
+		deptRepoistory.save(DepartementMapper.toEntity(dep));
 		return dep.getId();
 	}
 	

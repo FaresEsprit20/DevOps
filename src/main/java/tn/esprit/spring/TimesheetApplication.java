@@ -5,7 +5,6 @@ import java.util.EnumSet;
 import javax.faces.webapp.FacesServlet;
 import javax.servlet.DispatcherType;
 
-import org.modelmapper.ModelMapper;
 import org.ocpsoft.rewrite.servlet.RewriteFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -27,10 +26,7 @@ public class TimesheetApplication {
 		FacesServlet servlet = new FacesServlet();
 		return new ServletRegistrationBean(servlet, "*.jsf"); }
 
-	@Bean
-	public ModelMapper modelMapper() {
-	    return new ModelMapper();
-	}
+
 	
 	@Bean
 	public FilterRegistrationBean rewriteFilter() {

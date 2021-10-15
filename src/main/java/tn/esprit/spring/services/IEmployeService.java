@@ -3,6 +3,7 @@ package tn.esprit.spring.services;
 import java.util.Date;
 import java.util.List;
 
+import tn.esprit.spring.dto.ContratDTO;
 import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
@@ -19,7 +20,7 @@ public interface IEmployeService {
 	public void mettreAjourEmailByEmployeId(String email, int employeId);
 	public void affecterEmployeADepartement(int employeId, int depId);
 	public void desaffecterEmployeDuDepartement(int employeId, int depId);
-	public int ajouterContrat(Contrat contrat);
+	public int ajouterContrat(ContratDTO contrat);
 	public void affecterContratAEmploye(int contratId, int employeId);
 	public String getEmployePrenomById(int employeId);
 	public void deleteEmployeById(int employeId);

@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import tn.esprit.spring.dto.DepartementDTO;
+import tn.esprit.spring.dto.EntrepriseDTO;
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.services.IEmployeService;
@@ -21,7 +23,7 @@ public class ControllerEntrepriseImpl{
 	@Autowired
 	ITimesheetService itimesheetservice;
 
-	public int ajouterEntreprise(Entreprise ssiiConsulting) {
+	public int ajouterEntreprise(EntrepriseDTO ssiiConsulting) {
 		ientrepriseservice.ajouterEntreprise(ssiiConsulting);
 		return ssiiConsulting.getId();
 	}
@@ -37,7 +39,7 @@ public class ControllerEntrepriseImpl{
 		return ientrepriseservice.getEntrepriseById(entrepriseId);
 	}
 	
-	public int ajouterDepartement(Departement dep) {
+	public int ajouterDepartement(DepartementDTO dep) {
 		return ientrepriseservice.ajouterDepartement(dep);
 	}
 	

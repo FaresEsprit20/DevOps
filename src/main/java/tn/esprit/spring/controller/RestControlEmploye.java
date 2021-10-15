@@ -1,10 +1,9 @@
 package tn.esprit.spring.controller;
 
-import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.List;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.esprit.spring.dto.ContratDTO;
 import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
@@ -68,9 +68,9 @@ public class RestControlEmploye {
 
 	@PostMapping("/ajouterContrat")
 	@ResponseBody
-	public int ajouterContrat(@RequestBody Contrat contrat) {
-		iemployeservice.ajouterContrat(contrat);
-		return contrat.getReference();
+	public int ajouterContrat(@RequestBody ContratDTO contratDto) {
+		iemployeservice.ajouterContrat(contratDto);
+		return contratDto.getReference();
 	}
 	
 	
