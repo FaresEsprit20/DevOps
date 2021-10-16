@@ -1,15 +1,15 @@
 package tn.esprit.spring.mapper;
 
-import java.util.List;
 
-import tn.esprit.spring.dto.DepartementDTO;
 import tn.esprit.spring.dto.EntrepriseDTO;
 import tn.esprit.spring.entities.Entreprise;
 
 
 public class EntrepriseMapper {
 
-	
+private EntrepriseMapper() {
+		
+	}
 	
 	public static Entreprise toEntity(EntrepriseDTO entrepriseDto) {
 		

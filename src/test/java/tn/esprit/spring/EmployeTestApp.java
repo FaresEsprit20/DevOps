@@ -12,16 +12,6 @@ import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import tn.esprit.spring.dto.ContratDTO;
-import tn.esprit.spring.dto.EmployeDTO;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Role;
@@ -76,10 +66,8 @@ private static final Logger l = LogManager.getLogger(EmployeTestApp.class);
 		// ContratDTO contrat = new ContratDTO(1,new Date)
 
 		 String sDate1="31-12-2020";  
-		 String sDate2="31-12-2021";  
 		  SimpleDateFormat formatter1=new SimpleDateFormat("dd-MM-yyyy");  
 		  Date dateDebut=formatter1.parse(sDate1);  
-		  Date dateFin=formatter1.parse(sDate2);  
 	      String uri = "/ajouterContrat";
 	      Contrat contrat = new Contrat();
 	      contrat.setDateDebut(dateDebut);

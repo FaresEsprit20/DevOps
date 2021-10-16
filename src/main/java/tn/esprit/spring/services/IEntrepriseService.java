@@ -4,7 +4,6 @@ import java.util.List;
 
 import tn.esprit.spring.dto.DepartementDTO;
 import tn.esprit.spring.dto.EntrepriseDTO;
-import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
 
 public interface IEntrepriseService {

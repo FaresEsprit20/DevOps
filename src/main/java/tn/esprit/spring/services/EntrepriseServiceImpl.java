@@ -45,6 +45,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	}
 	
 	public List<String> getAllDepartementsNamesByEntreprise(int entrepriseId) {
+		List<String> emptyList = null;
 		Optional <Entreprise> entrepriseManagedEntity = entrepriseRepoistory.findById(entrepriseId);
 		List<String> depNames = new ArrayList<>();
 		if(entrepriseManagedEntity.isPresent()) {
@@ -54,7 +55,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		
 		return depNames;
 		}
-		return null;
+		return emptyList;
 	}
 
 	@Transactional

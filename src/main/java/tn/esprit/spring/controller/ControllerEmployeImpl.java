@@ -15,14 +15,11 @@ import org.springframework.stereotype.Controller;
 
 import tn.esprit.spring.dto.ContratDTO;
 import tn.esprit.spring.dto.EmployeDTO;
-import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.entities.Role;
 import tn.esprit.spring.entities.Timesheet;
-import tn.esprit.spring.mapper.ContratMapper;
-import tn.esprit.spring.mapper.EmployeMapper;
 import tn.esprit.spring.services.IEmployeService;
 
 
@@ -45,11 +42,10 @@ public class ControllerEmployeImpl  {
 	private String email;
 	private boolean actif;
 	private Role role;  
-	public Role[] getRoles() { return Role.values(); }
 
 	private List<Employe> employes; 
 
-	private Integer employeIdToBeUpdated; // getter et setter
+	private Integer employeIdToBeUpdated; 
 
 
 	public String doLogin() {
@@ -113,17 +109,6 @@ public class ControllerEmployeImpl  {
 
 	} 
 
-	/*public String updateEmploye() 
-	{ 
-		String navigateTo = "null";
-		
-		if (authenticatedUser==null || !loggedIn) return "/login.xhtml?faces-redirect=true";
-
-		//employeService.addOrUpdateEmploye(new Employe(employeIdToBeUpdated, nom, prenom, email, password, actif, role)); 
-
-		return navigateTo; 
-
-	} */
 
 
 	// getters and setters 

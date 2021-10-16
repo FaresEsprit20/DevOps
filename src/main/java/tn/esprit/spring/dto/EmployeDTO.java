@@ -1,8 +1,6 @@
 package tn.esprit.spring.dto;
 
-
 import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -36,8 +34,8 @@ public class EmployeDTO  {
 	private ContratDTO contrat;
 	
 	private List<TimesheetDTO> timesheets;
-	
-	public EmployeDTO(String nom, String prenom, String email, String password, boolean actif, Role role) {
+
+	public EmployeDTO(String prenom, String nom, String email, String password, boolean actif, Role role) {
 		super();
 		this.prenom = prenom;
 		this.nom = nom;
@@ -48,33 +46,7 @@ public class EmployeDTO  {
 	}
 
 
-	public EmployeDTO(int id, String prenom, String nom, String email, String password, boolean actif, Role role,
-			ContratDTO contrat) {
-		super();
-		this.id = id;
-		this.prenom = prenom;
-		this.nom = nom;
-		this.email = email;
-		this.password = password;
-		this.actif = actif;
-		this.role = role;
-		this.contrat = contrat;
-	}
 
-
-	public EmployeDTO(int id, String prenom, String nom, String email, String password, boolean actif, Role role,
-			List<DepartementDTO> departements) {
-		super();
-		this.id = id;
-		this.prenom = prenom;
-		this.nom = nom;
-		this.email = email;
-		this.password = password;
-		this.actif = actif;
-		this.role = role;
-		this.departements = departements;
-	}
-	
 	
 	
 	

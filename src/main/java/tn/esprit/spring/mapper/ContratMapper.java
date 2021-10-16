@@ -9,6 +9,10 @@ import tn.esprit.spring.entities.Employe;
 
 public class ContratMapper {
 
+	private ContratMapper() {
+		
+	}
+	
 	public static Contrat toEntity(ContratDTO contratDto) {
 		
 		if(contratDto == null) {

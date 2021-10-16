@@ -1,7 +1,6 @@
 package tn.esprit.spring.mapper;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import tn.esprit.spring.dto.MissionExterneDTO;
 import tn.esprit.spring.entities.MissionExterne;
@@ -10,7 +9,10 @@ import tn.esprit.spring.entities.MissionExterne;
 
 public class MissionExterneMapper {
 
-	
+private MissionExterneMapper() {
+		
+	}
+
 	public static MissionExterne toEntity(MissionExterneDTO missionDto) {
 		
 		
