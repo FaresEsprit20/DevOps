@@ -17,9 +17,11 @@ import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Data;
 
 
 
+@Data
 @Entity
 public class Employe implements Serializable {
 	
@@ -32,9 +34,7 @@ public class Employe implements Serializable {
 	private String prenom;
 	
 	private String nom;
-	
-	//@Column(unique=true)
-	//@Pattern(regex=".+\@.+\..+")
+
 	private String email;
 
 	private String password;
@@ -42,22 +42,17 @@ public class Employe implements Serializable {
 	private boolean actif;
 	
 	@Enumerated(EnumType.STRING)
-	//@NotNull
 	private Role role;
 	
-	//@JsonBackReference  
 	@JsonIgnore
 	@ManyToMany(mappedBy="employes",fetch=FetchType.EAGER )
-	//@NotNull
 	private List<Departement> departements;
 	
 	@JsonIgnore
-	//@JsonBackReference
 	@OneToOne(mappedBy="employe")
 	private Contrat contrat;
 	
 	@JsonIgnore
-	//@JsonBackReference
 	@OneToMany(mappedBy="employe")
 	private List<Timesheet> timesheets;
 	
@@ -80,111 +75,6 @@ public class Employe implements Serializable {
 	
 
 
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
-	public String getPrenom() {
-		return prenom;
-	}
-
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
-
-
-	public String getNom() {
-		return nom;
-	}
-
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-
-	public boolean isActif() {
-		return actif;
-	}
-
-
-	public void setActif(boolean actif) {
-		this.actif = actif;
-	}
-
-
-	public Role getRole() {
-		return role;
-	}
-
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
-
-
-	public List<Departement> getDepartements() {
-		return departements;
-	}
-
-
-	public void setDepartements(List<Departement> departements) {
-		this.departements = departements;
-	}
-
-
-	public Contrat getContrat() {
-		return contrat;
-	}
-
-
-	public void setContrat(Contrat contrat) {
-		this.contrat = contrat;
-	}
-
-
-	public List<Timesheet> getTimesheets() {
-		return timesheets;
-	}
-
-
-	public void setTimesheets(List<Timesheet> timesheets) {
-		this.timesheets = timesheets;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Employe [id=" + id + ", prenom=" + prenom + ", nom=" + nom + ", email=" + email + ", password="
-				+ password + ", actif=" + actif + ", role=" + role + "]";
-	}
 	
 	
 	

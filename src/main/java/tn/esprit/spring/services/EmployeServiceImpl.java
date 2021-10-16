@@ -41,9 +41,8 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	@Override
 	public Employe authenticate(String login, String password) {
-		Employe employeNull = null;
 		
-		return employeNull;
+		return new Employe();
 	}
 
 	@Override
