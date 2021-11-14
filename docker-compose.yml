@@ -1,0 +1,29 @@
+version: "3"
+services:
+  
+  mysql:
+    container_name: mysql
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=timesheetspring
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+    ports:
+      - 3306:3306
+  
+  Timesheet:
+    container_name: timesheet
+    ports:
+      - 8082:8082
+    environment:
+     - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/timesheetspring?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+     - SPRING_DATASOURCE_USERNAME=root
+     - DATABASE_USER=root
+     - SPRING_DATASOURCE_PASSWORD=
+     - DATABASE_NAME=timesheetspring
+     - DATABASE_PORT=3306
+    hostname: timesheet
+    image: "199508055180/test"
+    depends_on:
+      - mysql

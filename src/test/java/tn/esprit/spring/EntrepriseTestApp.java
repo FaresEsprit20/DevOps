@@ -32,7 +32,7 @@ public class EntrepriseTestApp extends AbstractTest {
 	   public void ajouterEntreprise() throws Exception {
 	      String uri = "/ajouterEntreprise";
 	      EntrepriseDTO entreprise = new EntrepriseDTO();
-	      entreprise.setId(2);;
+	      entreprise.setId(2);
 	      entreprise.setName("Ginger");
 	      entreprise.setRaisonSocial("Lac 2");
 	      String inputJson = super.mapToJson(entreprise);
@@ -60,10 +60,14 @@ public class EntrepriseTestApp extends AbstractTest {
 	   @Test
 	   public void ajouterDepartement() throws Exception {
 	      String uri = "/ajouterDepartement";
+	      EntrepriseDTO entreprise = new EntrepriseDTO();
+	      entreprise.setId(2);
+	      entreprise.setName("Ginger");
+	      entreprise.setRaisonSocial("Lac 2");
 	      DepartementDTO departement = new DepartementDTO();
 	      departement.setId(19);;
 	      departement.setName("GingerX");
-	 
+	      departement.setEntreprise(entreprise);
 	      String inputJson = super.mapToJson(departement);
 	      MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
 	         .contentType(MediaType.APPLICATION_JSON_VALUE)

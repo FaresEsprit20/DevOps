@@ -48,7 +48,6 @@ public class Employe implements Serializable {
 	@ManyToMany(mappedBy="employes",fetch=FetchType.EAGER )
 	private List<Departement> departements;
 	
-	@JsonIgnore
 	@OneToOne(mappedBy="employe")
 	private Contrat contrat;
 	
@@ -74,7 +73,15 @@ public class Employe implements Serializable {
 	}
 	
 
-
+	public Employe(String prenom, String nom, String email, String password, boolean actif, Role role) {
+		super();
+		this.prenom = prenom;
+		this.nom = nom;
+		this.email = email;
+		this.password = password;
+		this.actif = actif;
+		this.role = role;
+	}
 	
 	
 	

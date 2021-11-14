@@ -18,16 +18,14 @@ private EmployeMapper() {
 		
 		Contrat contrat = ContratMapper.toEntity(employeDto.getContrat());
 		Employe employe = new Employe();
-		
+		employe.setId(employeDto.getId());
 		employe.setEmail(employeDto.getEmail());
 		employe.setPassword(employeDto.getPassword());
+		employe.setNom(employeDto.getNom());
 		employe.setPrenom(employeDto.getPrenom());
-		employe.setActif(employeDto.isActif());
+		employe.setActif(employeDto.isActif());		
 		employe.setContrat(contrat);
-		employe.setEmail(employe.getEmail());
-		employe.setNom(employe.getNom());
-		employe.setId(employe.getId());
-		employe.setRole(employe.getRole());
+		employe.setRole(employeDto.getRole());
 				return employe;
 	
 	}
@@ -35,18 +33,16 @@ private EmployeMapper() {
 	
 	public static EmployeDTO toDto(Employe employe) {
 		ContratDTO contrat = ContratMapper.toDto(employe.getContrat());
-		return EmployeDTO.builder()
-				.email(employe.getEmail())
-				.password(employe.getPassword())
-				.prenom(employe.getPrenom())
-				.actif(employe.isActif())
-				.contrat(contrat)
-				.email(employe.getEmail())
-				.nom(employe.getNom())
-				.id(employe.getId())
-				.role(employe.getRole())
-				.build();
-		
+		EmployeDTO employeDto = new EmployeDTO();
+		employeDto.setId(employe.getId());
+		employeDto.setEmail(employe.getEmail());
+		employeDto.setPassword(employe.getPassword());
+		employeDto.setNom(employe.getNom());
+		employeDto.setPrenom(employe.getPrenom());
+		employeDto.setActif(employe.isActif());		
+		employeDto.setContrat(contrat);
+		employeDto.setRole(employe.getRole());
+				return employeDto;
 	
 	}
 	

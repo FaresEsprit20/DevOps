@@ -79,7 +79,7 @@ public class ControllerEmployeImpl  {
 
 		if (authenticatedUser==null || !loggedIn) return URL;
 
-		employeService.addOrUpdateEmploye(new EmployeDTO(nom, prenom, email, password, actif, role)); 
+		employeService.addOrUpdateEmploye(new EmployeDTO(prenom, nom, email, password, actif, role)); 
 		return "null"; 
 	}  
 
