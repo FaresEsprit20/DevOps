@@ -3,27 +3,28 @@ services:
   
   mysql:
     container_name: mysql
-    image: mysql
+    image: mysql-db
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=timesheetspring
       - MYSQL_USER=root
-      - MYSQL_PASSWORD=
     ports:
       - 3306:3306
-  
+    restart: always
+    
   Timesheet:
     container_name: timesheet
+    build:
+        context: .                          #docker file path (. means root directory)
+        dockerfile: Dockerfile 
     ports:
       - 8082:8082
     environment:
-     - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/timesheetspring?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+     - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/timesheetspring?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
      - SPRING_DATASOURCE_USERNAME=root
      - DATABASE_USER=root
-     - SPRING_DATASOURCE_PASSWORD=
      - DATABASE_NAME=timesheetspring
      - DATABASE_PORT=3306
-    hostname: timesheet
     image: "199508055180/test"
     depends_on:
       - mysql
