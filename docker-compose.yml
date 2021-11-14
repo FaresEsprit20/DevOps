@@ -9,7 +9,7 @@ services:
       - MYSQL_DATABASE=timesheetspring
     
     ports:
-      - 3306:3306
+      - 3307:3306
     
     
   Timesheet:
@@ -17,13 +17,8 @@ services:
     ports:
       - 8082:8082
     environment:
-     - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/timesheetspring?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
-     - SPRING_DATASOURCE_USERNAME=root
-     - DATABASE_USER=root
-     - SPRING_DATASOURCE_PASSWORD=root2021
-     - DATABASE_NAME=timesheetspring
-     - DATABASE_PORT=3306
-    image: "199508055180/test"
-    hostname: timesheet
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/timesheetspring?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+    
+    image: "199508055180/test:33"
     depends_on:
       - mysql
