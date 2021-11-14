@@ -76,7 +76,7 @@ public class EntrepriseTestApp extends AbstractTest {
 	      int status = mvcResult.getResponse().getStatus();
 	      assertEquals(200, status);
 	      if(status == 200) {
-	    	  l.info("le departement a été ajouté avec succés");
+	    	  l.info("le departement a été ajoutés avec succés");
 		      }else if(status >= 400 && status <500) {
 		    	  l.fatal("erreur coté client :  code reponse :  "+status);
 		      }else if(status >= 500){
