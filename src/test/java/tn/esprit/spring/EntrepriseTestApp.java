@@ -56,7 +56,7 @@ public class EntrepriseTestApp extends AbstractTest {
 	   
 	  
 	  
-	 
+	 /*
 	   @Test
 	   public void ajouterDepartement() throws Exception {
 	      String uri = "/ajouterDepartement";
@@ -79,7 +79,7 @@ public class EntrepriseTestApp extends AbstractTest {
 		    	  l.error("erreur coté serveur :  code reponse :  "+status);
 		      }
 	   }
-	   
+	  
 	 
 	   @Test
 	   public void getEntrepriseById() throws Exception {
@@ -100,7 +100,7 @@ public class EntrepriseTestApp extends AbstractTest {
 		    	  l.error("erreur coté serveur :  code reponse :  "+status);
 		      }
 	   }
-	   
+	   */
 	   
 	   @Test
 	   public void getAllDepartementsNamesByEntreprise() throws Exception {
